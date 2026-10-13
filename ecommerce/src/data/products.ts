@@ -1,0 +1,15 @@
+export type ProductStatus =
+  | "AVAILABLE"
+  | "OUT_OF_STOCK";
+
+export interface Product {
+  productId: number;
+  productName: string;
+  category: string;
+  description: string;
+  price: number;
+  stock: number;
+  imageUrl: string;
+  rating: number;
+  status: ProductStatus;
+}

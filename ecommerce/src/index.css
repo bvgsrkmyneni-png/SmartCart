@@ -1,0 +1,2497 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.filters input,
+.filters select {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.filters input {
+    flex: 1;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.product-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px #ccc;
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    margin-bottom: 8px;
+}
+
+/* Add to Cart */
+.product-card button {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* Add to Cart hover */
+.product-card button:hover {
+    background: #0056b3;
+}
+
+/* Out of Stock */
+.product-card button:disabled {
+    background: #dc3545;
+    color: white;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+/* ---------- Cart ---------- */
+
+.cart {
+    margin-top: 40px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px #ccc;
+}
+
+.cart h2 {
+    text-align: center;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item img {
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.cart-item button {
+    background: #6f42c1;
+    color: white;
+    padding: 5px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.cart-item button:hover {
+    background: #563d7c;
+}
+
+/* ---------- Checkout ---------- */
+
+.checkout {
+    margin-top: 40px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px #ccc;
+}
+
+.checkout h2 {
+    text-align: center;
+}
+
+.checkout form {
+    max-width: 600px;
+    margin: auto;
+}
+
+.checkout form div {
+    margin-bottom: 15px;
+}
+
+.checkout label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.checkout input,
+.checkout textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.checkout textarea {
+    height: 100px;
+}
+
+.checkout button {
+    background: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.checkout button:hover {
+    background: #218838;
+}
+
+/* ---------- Responsive Design ---------- */
+
+@media (max-width: 768px) {
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.checkout p {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* ---------- Navbar ---------- */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #343a40;
+  color: white;
+}
+
+.navbar-brand {
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-links button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.navbar-links button:hover {
+  background: #0056b3;
+}
+
+.welcome-user {
+  font-size: 14px;
+}
+
+
+/* ---------- Authentication ---------- */
+
+.auth-container {
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #ccc;
+}
+
+.auth-container h2 {
+  text-align: center;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.auth-container input,
+.auth-container select {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.auth-container button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.auth-container button:hover {
+  background: #0056b3;
+}
+
+
+/* ---------- Admin Dashboard ---------- */
+
+.admin-section {
+  margin: 20px 0 40px 0;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px #ccc;
+}
+
+.product-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.product-form input,
+.product-form textarea {
+  padding: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.product-form textarea {
+  grid-column: span 2;
+  min-height: 100px;
+}
+
+.product-form button {
+  grid-column: span 2;
+  background: #28a745;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.product-form button:hover {
+  background: #218838;
+}
+
+
+/* ---------- Form Messages ---------- */
+
+.form-message {
+  color: green;
+  font-weight: bold;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+
+/* ---------- Responsive Navbar ---------- */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .navbar-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .product-form {
+    grid-template-columns: 1fr;
+  }
+
+  .product-form textarea,
+  .product-form button {
+    grid-column: span 1;
+  }
+}
+.admin-product-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.admin-product-buttons button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.admin-product-buttons button:last-child {
+    background: #dc3545;
+}
+
+.admin-product-buttons button:hover {
+    opacity: 0.85;
+}
+/* ==================================================
+   MODERN ADMIN DASHBOARD
+   ================================================== */
+
+.admin-dashboard {
+    padding: 10px 0 50px;
+}
+
+/* ---------- Dashboard Header ---------- */
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 25px 30px;
+
+    background: linear-gradient(
+        135deg,
+        #1e293b,
+        #334155
+    );
+
+    color: white;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-header h1 {
+    text-align: left;
+    margin: 5px 0 8px;
+    font-size: 30px;
+}
+
+.dashboard-label {
+    margin: 0;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #93c5fd;
+}
+
+.dashboard-subtitle {
+    margin: 0;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+.admin-badge {
+    background: #2563eb;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+/* ---------- Modern Add Product Card ---------- */
+
+.modern-form-card {
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    margin: 0 0 6px;
+    color: #1e293b;
+}
+
+.section-heading p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* ---------- Product Form ---------- */
+
+.modern-product-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #334155;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.form-group textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+
+/* ---------- Submit Button ---------- */
+
+.form-submit-area {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+
+.product-form .insert-product-btn {
+    grid-column: auto;
+
+    width: auto;
+    min-width: 170px;
+
+    padding: 12px 24px;
+
+    background: #2563eb;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s,
+        transform 0.2s;
+}
+
+.product-form .insert-product-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+
+/* ---------- Messages ---------- */
+
+.form-message {
+    margin-top: 20px;
+    padding: 12px 15px;
+    border-radius: 8px;
+}
+
+.success-message {
+    color: #166534;
+    background: #dcfce7;
+    border: 1px solid #bbf7d0;
+}
+
+.error-message {
+    color: #991b1b;
+    background: #fee2e2;
+    border: 1px solid #fecaca;
+}
+
+
+/* ---------- Products Management ---------- */
+
+.products-management-section {
+    margin-top: 40px;
+}
+
+.products-section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.products-section-title h2 {
+    margin: 0 0 5px;
+    color: #1e293b;
+    font-size: 25px;
+}
+
+.products-section-title p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* ---------- Improve Product Cards ---------- */
+
+.admin-dashboard .product-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+
+    padding: 16px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+.admin-dashboard .product-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.admin-dashboard .product-card img {
+    height: 200px;
+    border-radius: 9px;
+    object-fit: cover;
+}
+
+
+/* ---------- Admin Update/Delete Buttons ---------- */
+
+.admin-dashboard .admin-product-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.admin-dashboard .admin-product-buttons button {
+    flex: 1;
+    padding: 9px 14px;
+
+    border: none;
+    border-radius: 7px;
+
+    color: white;
+    background: #2563eb;
+
+    cursor: pointer;
+    font-weight: bold;
+
+    transition:
+        transform 0.2s,
+        opacity 0.2s;
+}
+
+.admin-dashboard
+.admin-product-buttons
+button:last-child {
+    background: #dc2626;
+}
+
+.admin-dashboard
+.admin-product-buttons
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+
+/* ---------- Responsive Admin Dashboard ---------- */
+
+@media (max-width: 768px) {
+
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 22px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 25px;
+    }
+
+    .modern-form-card {
+        padding: 20px;
+    }
+
+    .modern-product-form {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: 1;
+    }
+
+    .form-submit-area {
+        grid-column: 1;
+    }
+
+    .product-form .insert-product-btn {
+        width: 100%;
+    }
+}
+/* ==================================================
+   MODERN PRODUCT LIST
+   ================================================== */
+
+.product-list-container {
+    width: 100%;
+}
+
+
+/* ---------- Search Toolbar ---------- */
+
+.product-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    background: white;
+    padding: 15px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+
+    margin: 20px 0 12px;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.search-box {
+    flex: 1;
+    position: relative;
+}
+
+.search-box input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 12px 15px 12px 42px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    background: #f8fafc;
+
+    transition: 0.2s;
+}
+
+.search-box input:focus {
+    outline: none;
+    background: white;
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+
+    left: 15px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 20px;
+    color: #64748b;
+}
+
+
+/* ---------- Category Filter ---------- */
+
+.category-filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.category-filter span {
+    font-size: 13px;
+    font-weight: bold;
+    color: #64748b;
+}
+
+.category-filter select {
+    min-width: 150px;
+
+    padding: 11px 12px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+
+    background: white;
+
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.category-filter select:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+
+/* ---------- Result Information ---------- */
+
+.product-results-info {
+    min-height: 35px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 12px;
+}
+
+.product-results-info p {
+    margin: 0;
+
+    color: #64748b;
+    font-size: 14px;
+}
+
+.product-results-info strong {
+    color: #1e293b;
+}
+
+.active-category {
+    padding: 6px 12px;
+
+    background: #dbeafe;
+    color: #1d4ed8;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* ---------- Better Product Grid ---------- */
+
+.product-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+/* ---------- Product Card ---------- */
+
+.product-card {
+    background: white;
+
+    padding: 14px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+
+    text-align: center;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    background: #f1f5f9;
+}
+
+.product-card h3 {
+    margin: 15px 0 8px;
+
+    color: #0f172a;
+    font-size: 18px;
+}
+
+
+/* ---------- Empty Products ---------- */
+
+.no-products {
+    text-align: center;
+
+    background: white;
+
+    padding: 60px 20px;
+
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+
+    margin-top: 20px;
+}
+
+.no-products-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.no-products h3 {
+    margin: 5px 0;
+    color: #1e293b;
+}
+
+.no-products p {
+    color: #64748b;
+}
+
+
+/* ---------- Loading ---------- */
+
+.product-status {
+    min-height: 250px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    color: #64748b;
+}
+
+.loading-circle {
+    width: 32px;
+    height: 32px;
+
+    border: 4px solid #e2e8f0;
+    border-top-color: #2563eb;
+
+    border-radius: 50%;
+
+    animation: productLoading 0.8s linear infinite;
+}
+
+@keyframes productLoading {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ---------- Error ---------- */
+
+.product-error {
+    margin: 20px 0;
+
+    padding: 15px;
+
+    color: #991b1b;
+    background: #fee2e2;
+
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 900px) {
+
+    .product-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 650px) {
+
+    .product-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .category-filter {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .category-filter select {
+        width: 100%;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card img {
+        height: 240px;
+    }
+
+}
+/* ==================================================
+   ATTRACTIVE PRODUCT CARDS
+   ================================================== */
+
+.product-card {
+    overflow: hidden;
+    padding: 0;
+    text-align: left;
+
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.07);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 35px rgba(15, 23, 42, 0.14);
+}
+
+
+/* ---------- Image ---------- */
+
+.product-image-container {
+    position: relative;
+
+    height: 230px;
+
+    overflow: hidden;
+
+    background: #f8fafc;
+}
+
+.product-card .product-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 0;
+
+    transition: transform 0.35s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.04);
+}
+
+
+/* ---------- Category Badge ---------- */
+
+.category-badge {
+    position: absolute;
+
+    top: 14px;
+    left: 14px;
+
+    padding: 6px 11px;
+
+    background: rgba(15, 23, 42, 0.88);
+    color: white;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+
+/* ---------- Stock Badge ---------- */
+
+.stock-badge {
+    position: absolute;
+
+    top: 14px;
+    right: 14px;
+
+    padding: 6px 10px;
+
+    background: #dcfce7;
+    color: #166534;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.out-stock-badge {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+
+/* ---------- Card Content ---------- */
+
+.product-content {
+    padding: 18px;
+}
+
+.product-content h3 {
+    margin: 0 0 9px;
+
+    color: #0f172a;
+
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.product-description {
+    min-height: 40px;
+
+    margin: 0 0 14px;
+
+    color: #64748b;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* ---------- Rating ---------- */
+
+.product-rating {
+    display: flex;
+    align-items: center;
+
+    gap: 4px;
+
+    margin-bottom: 15px;
+
+    font-size: 14px;
+}
+
+.rating-star {
+    color: #f59e0b;
+    font-size: 18px;
+}
+
+.product-rating strong {
+    color: #334155;
+}
+
+.rating-max {
+    color: #94a3b8;
+}
+
+
+/* ---------- Price ---------- */
+
+.product-price-row {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+
+    margin-bottom: 18px;
+}
+
+.price-label {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.product-price {
+    color: #0f172a;
+
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.stock-count {
+    color: #64748b;
+
+    font-size: 12px;
+
+    background: #f1f5f9;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+}
+
+
+/* ---------- Add To Cart ---------- */
+
+.product-card .add-cart-btn {
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #2563eb;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.product-card .add-cart-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.product-card .add-cart-btn:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* ==================================================
+   ADMIN PRODUCT BUTTONS
+   ================================================== */
+
+.product-card .admin-product-buttons {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 5px;
+}
+
+.product-card .admin-product-buttons button {
+    padding: 10px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.product-card .admin-product-buttons .update-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.product-card .admin-product-buttons .delete-btn {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.product-card .admin-product-buttons .update-btn:hover {
+    background: #1d4ed8;
+}
+
+.product-card .admin-product-buttons .delete-btn:hover {
+    background: #fecaca;
+}
+
+
+/* ==================================================
+   PRODUCT EDIT FORM
+   ================================================== */
+
+.product-edit-form {
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.edit-form-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 8px;
+}
+
+.edit-form-header h3 {
+    margin: 0;
+
+    color: #0f172a;
+}
+
+.edit-form-header span {
+    padding: 5px 9px;
+
+    background: #f1f5f9;
+    color: #64748b;
+
+    border-radius: 15px;
+
+    font-size: 11px;
+}
+
+.product-edit-form label {
+    margin-top: 4px;
+
+    color: #475569;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.product-edit-form input,
+.product-edit-form textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 10px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+.product-edit-form textarea {
+    min-height: 80px;
+
+    resize: vertical;
+}
+
+.product-edit-form input:focus,
+.product-edit-form textarea:focus {
+    outline: none;
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+/* ---------- Price + Stock Row ---------- */
+
+.edit-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+.edit-row > div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+
+/* ---------- Save / Cancel ---------- */
+
+.edit-actions {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 12px;
+}
+
+.product-card .save-btn {
+    background: #16a34a;
+    color: white;
+
+    padding: 10px;
+
+    border: none;
+    border-radius: 7px;
+
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.product-card .cancel-btn {
+    background: #e2e8f0;
+    color: #334155;
+
+    padding: 10px;
+
+    border: none;
+    border-radius: 7px;
+
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.product-card .save-btn:hover {
+    background: #15803d;
+}
+
+.product-card .cancel-btn:hover {
+    background: #cbd5e1;
+}
+/* ==================================================
+   LIGHT / DARK THEME
+   ================================================== */
+
+/* Smooth theme transition */
+
+body,
+.navbar,
+.product-card,
+.product-toolbar,
+.admin-section,
+.auth-container,
+.cart,
+.checkout,
+input,
+textarea,
+select {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* ==================================================
+   THEME BUTTON
+   ================================================== */
+
+.theme-toggle {
+    background: #f8fafc !important;
+    color: #0f172a !important;
+
+    border: 1px solid #cbd5e1 !important;
+
+    padding: 8px 14px !important;
+
+    border-radius: 20px !important;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+.theme-toggle:hover {
+    background: #e2e8f0 !important;
+}
+
+
+/* ==================================================
+   DARK MODE - PAGE
+   ================================================== */
+
+body.dark-theme {
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+
+/* ==================================================
+   DARK MODE - NAVBAR
+   ================================================== */
+
+body.dark-theme .navbar {
+    background: #020617;
+    border-bottom: 1px solid #1e293b;
+}
+
+body.dark-theme .navbar-brand {
+    color: #ffffff;
+}
+
+body.dark-theme .welcome-user {
+    color: #cbd5e1;
+}
+
+body.dark-theme .theme-toggle {
+    background: #1e293b !important;
+    color: #f8fafc !important;
+    border-color: #475569 !important;
+}
+
+body.dark-theme .theme-toggle:hover {
+    background: #334155 !important;
+}
+
+
+/* ==================================================
+   DARK MODE - HEADINGS / TEXT
+   ================================================== */
+
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3 {
+    color: #f8fafc;
+}
+
+body.dark-theme .subtitle {
+    color: #94a3b8;
+}
+
+
+/* ==================================================
+   DARK MODE - PRODUCT TOOLBAR
+   ================================================== */
+
+body.dark-theme .product-toolbar {
+    background: #1e293b;
+    border-color: #334155;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-theme .search-box input {
+    background: #0f172a;
+    color: #f8fafc;
+
+    border-color: #475569;
+}
+
+body.dark-theme .search-box input::placeholder {
+    color: #64748b;
+}
+
+body.dark-theme .category-filter span {
+    color: #94a3b8;
+}
+
+body.dark-theme .category-filter select {
+    background: #0f172a;
+    color: #f8fafc;
+
+    border-color: #475569;
+}
+
+body.dark-theme .product-results-info p {
+    color: #94a3b8;
+}
+
+body.dark-theme .product-results-info strong {
+    color: #f8fafc;
+}
+
+
+/* ==================================================
+   DARK MODE - PRODUCT CARDS
+   ================================================== */
+
+body.dark-theme .product-card {
+    background: #1e293b;
+
+    border-color: #334155;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .product-card:hover {
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.45);
+}
+
+body.dark-theme .product-image-container {
+    background: #0f172a;
+}
+
+body.dark-theme .product-content h3 {
+    color: #f8fafc;
+}
+
+body.dark-theme .product-description {
+    color: #94a3b8;
+}
+
+body.dark-theme .product-rating strong {
+    color: #e2e8f0;
+}
+
+body.dark-theme .product-price {
+    color: #ffffff;
+}
+
+body.dark-theme .price-label {
+    color: #94a3b8;
+}
+
+body.dark-theme .stock-count {
+    background: #334155;
+    color: #cbd5e1;
+}
+
+
+/* ==================================================
+   DARK MODE - ADMIN DASHBOARD
+   ================================================== */
+
+body.dark-theme .admin-section {
+    background: #1e293b;
+
+    border-color: #334155;
+
+    box-shadow:
+        0 4px 18px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .section-heading h2,
+body.dark-theme .products-section-title h2 {
+    color: #f8fafc;
+}
+
+body.dark-theme .section-heading p,
+body.dark-theme .products-section-title p {
+    color: #94a3b8;
+}
+
+body.dark-theme .form-group label {
+    color: #cbd5e1;
+}
+
+
+/* ==================================================
+   DARK MODE - FORMS
+   ================================================== */
+
+body.dark-theme input,
+body.dark-theme textarea,
+body.dark-theme select {
+    background: #0f172a;
+    color: #f8fafc;
+
+    border-color: #475569;
+}
+
+body.dark-theme input::placeholder,
+body.dark-theme textarea::placeholder {
+    color: #64748b;
+}
+
+body.dark-theme input:focus,
+body.dark-theme textarea:focus,
+body.dark-theme select:focus {
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+
+/* ==================================================
+   DARK MODE - AUTH
+   ================================================== */
+
+body.dark-theme .auth-container {
+    background: #1e293b;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ==================================================
+   DARK MODE - CART
+   ================================================== */
+
+body.dark-theme .cart {
+    background: #1e293b;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .cart-item {
+    border-color: #475569;
+}
+
+
+/* ==================================================
+   DARK MODE - CHECKOUT
+   ================================================== */
+
+body.dark-theme .checkout {
+    background: #1e293b;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ==================================================
+   DARK MODE - EDIT PRODUCT
+   ================================================== */
+
+body.dark-theme .product-edit-form {
+    background: #1e293b;
+}
+
+body.dark-theme .product-edit-form label {
+    color: #cbd5e1;
+}
+
+body.dark-theme .edit-form-header h3 {
+    color: #f8fafc;
+}
+
+body.dark-theme .edit-form-header span {
+    background: #334155;
+    color: #cbd5e1;
+}
+
+
+/* ==================================================
+   DARK MODE - NO PRODUCTS
+   ================================================== */
+
+body.dark-theme .no-products {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+body.dark-theme .no-products h3 {
+    color: #f8fafc;
+}
+
+body.dark-theme .no-products p {
+    color: #94a3b8;
+}
+/* ==================================================
+   LIQUID GLASS BUTTONS
+   Apple-inspired glass interface
+   ================================================== */
+
+.navbar-links button,
+.add-cart-btn,
+.insert-product-btn,
+.update-btn,
+.save-btn {
+    position: relative;
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+
+    border-radius: 999px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59, 130, 246, 0.85),
+            rgba(37, 99, 235, 0.65)
+        ) !important;
+
+    color: white !important;
+
+    backdrop-filter: blur(18px) saturate(180%);
+    -webkit-backdrop-filter: blur(18px) saturate(180%);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.45),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.12),
+        0 6px 18px rgba(37, 99, 235, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+
+    cursor: pointer;
+}
+
+
+/* Glass highlight */
+
+.navbar-links button::before,
+.add-cart-btn::before,
+.insert-product-btn::before,
+.update-btn::before,
+.save-btn::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 8%;
+    right: 8%;
+
+    height: 45%;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.35),
+            rgba(255, 255, 255, 0)
+        );
+
+    pointer-events: none;
+}
+
+
+/* Hover */
+
+.navbar-links button:hover,
+.add-cart-btn:hover,
+.insert-product-btn:hover,
+.update-btn:hover,
+.save-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+
+    filter: brightness(1.08);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.55),
+        0 9px 25px rgba(37, 99, 235, 0.32);
+}
+
+
+/* Button press */
+
+.navbar-links button:active,
+.add-cart-btn:active,
+.insert-product-btn:active,
+.update-btn:active,
+.save-btn:active {
+    transform: scale(0.96);
+
+    box-shadow:
+        inset 0 2px 6px rgba(0, 0, 0, 0.15),
+        0 3px 10px rgba(37, 99, 235, 0.2);
+}
+
+
+/* ==================================================
+   THEME TOGGLE - LIQUID GLASS
+   ================================================== */
+
+.navbar-links .theme-toggle {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.28),
+            rgba(255, 255, 255, 0.12)
+        ) !important;
+
+    color: white !important;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.35) !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.35),
+        0 5px 16px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ==================================================
+   DELETE BUTTON - LIQUID RED
+   ================================================== */
+
+.product-card .delete-btn {
+    border-radius: 999px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(239, 68, 68, 0.90),
+            rgba(220, 38, 38, 0.70)
+        ) !important;
+
+    color: white !important;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.3) !important;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.35),
+        0 5px 15px rgba(220, 38, 38, 0.25);
+}
+
+
+/* ==================================================
+   CANCEL BUTTON - LIQUID GRAY
+   ================================================== */
+
+.product-card .cancel-btn {
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(148, 163, 184, 0.8),
+            rgba(100, 116, 139, 0.7)
+        );
+
+    color: white;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.3);
+
+    backdrop-filter: blur(15px);
+}
+
+
+/* ==================================================
+   DARK MODE LIQUID BUTTONS
+   ================================================== */
+
+body.dark-theme .navbar-links button,
+body.dark-theme .add-cart-btn,
+body.dark-theme .insert-product-btn,
+body.dark-theme .update-btn,
+body.dark-theme .save-btn {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59, 130, 246, 0.75),
+            rgba(99, 102, 241, 0.55)
+        ) !important;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.22) !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        0 7px 22px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-theme .navbar-links .theme-toggle {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.14),
+            rgba(255, 255, 255, 0.05)
+        ) !important;
+}
+/* ==================================================
+   FLOATING LIQUID GLASS NAVBAR
+   ================================================== */
+
+/* Give navbar breathing space */
+.navbar {
+    position: sticky;
+    top: 12px;
+    z-index: 1000;
+
+    width: calc(100% - 40px);
+    max-width: 1180px;
+
+    margin: 12px auto 20px;
+    box-sizing: border-box;
+
+    padding: 12px 18px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(30, 41, 59, 0.82),
+            rgba(15, 23, 42, 0.68)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.20),
+        0 10px 35px rgba(15, 23, 42, 0.18);
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* ==================================================
+   SMARTCART LOGO
+   ================================================== */
+
+.navbar-brand {
+    position: relative;
+
+    color: white;
+
+    font-size: 23px;
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+
+    cursor: pointer;
+
+    padding: 8px 12px;
+
+    border-radius: 14px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.navbar-brand:hover {
+    background: rgba(255, 255, 255, 0.10);
+
+    transform: scale(1.03);
+}
+
+
+/* Small glowing dot */
+
+.navbar-brand::after {
+    content: "";
+
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    margin-left: 5px;
+
+    border-radius: 50%;
+
+    background: #60a5fa;
+
+    box-shadow:
+        0 0 10px rgba(96, 165, 250, 0.9);
+}
+
+
+/* ==================================================
+   NAVBAR LINKS
+   ================================================== */
+
+.navbar-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+/* ==================================================
+   NAVBAR LIQUID BUTTONS
+   ================================================== */
+
+.navbar-links button {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 9px 15px;
+
+    border-radius: 999px !important;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.20) !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.16),
+            rgba(255, 255, 255, 0.07)
+        ) !important;
+
+    color: white !important;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.22),
+        0 4px 12px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Glass reflection */
+
+.navbar-links button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 15%;
+
+    width: 70%;
+    height: 45%;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.22),
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+/* Hover */
+
+.navbar-links button:hover {
+    transform: translateY(-2px);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59, 130, 246, 0.85),
+            rgba(99, 102, 241, 0.65)
+        ) !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.35),
+        0 7px 18px rgba(37, 99, 235, 0.25);
+}
+
+
+/* Click */
+
+.navbar-links button:active {
+    transform: translateY(0) scale(0.95);
+}
+
+
+/* ==================================================
+   WELCOME USER GLASS PILL
+   ================================================== */
+
+.welcome-user {
+    padding: 8px 13px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    color: #e2e8f0;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* ==================================================
+   LIGHT / DARK TOGGLE
+   ================================================== */
+
+.navbar-links .theme-toggle {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.24),
+            rgba(255, 255, 255, 0.10)
+        ) !important;
+
+    color: white !important;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.25) !important;
+
+    min-width: 90px;
+}
+
+
+/* ==================================================
+   LIGHT MODE NAVBAR
+   ================================================== */
+
+body:not(.dark-theme) .navbar {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.78),
+            rgba(241, 245, 249, 0.65)
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.80);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.95),
+        0 10px 35px rgba(15, 23, 42, 0.10);
+}
+
+body:not(.dark-theme) .navbar-brand {
+    color: #0f172a;
+}
+
+body:not(.dark-theme) .welcome-user {
+    color: #334155;
+
+    background: rgba(255, 255, 255, 0.50);
+
+    border-color: rgba(148, 163, 184, 0.20);
+}
+
+body:not(.dark-theme) .navbar-links button {
+    color: #1e293b !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.75),
+            rgba(226, 232, 240, 0.55)
+        ) !important;
+
+    border:
+        1px solid rgba(148, 163, 184, 0.25) !important;
+}
+
+body:not(.dark-theme) .navbar-links button:hover {
+    color: white !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59, 130, 246, 0.95),
+            rgba(79, 70, 229, 0.80)
+        ) !important;
+}
+
+
+/* ==================================================
+   DARK MODE NAVBAR
+   ================================================== */
+
+body.dark-theme .navbar {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(15, 23, 42, 0.80),
+            rgba(2, 6, 23, 0.68)
+        );
+
+    border-color: rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-theme .navbar-links button {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.12),
+            rgba(255, 255, 255, 0.04)
+        ) !important;
+}
+
+
+/* ==================================================
+   MOBILE NAVBAR
+   ================================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        width: calc(100% - 20px);
+
+        margin: 10px auto 15px;
+
+        top: 8px;
+
+        padding: 14px;
+
+        border-radius: 20px;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .navbar-links {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .navbar-links button {
+        padding: 8px 12px;
+
+        font-size: 12px;
+    }
+
+    .welcome-user {
+        text-align: center;
+    }
+}
+/* ============================= */
+/* Background Job Monitor - CO5 */
+/* ============================= */
+
+.job-monitor {
+    margin-top: 30px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.job-monitor h2 {
+    margin-bottom: 20px;
+}
+
+.job-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.job-table th,
+.job-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.job-table th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+}
+
+.job-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+/* Background Job Monitor - Text Visibility Fix */
+
+.job-monitor {
+    color: #1f2937;
+}
+
+.job-monitor h2 {
+    color: #111827;
+}
+
+.job-table th {
+    color: #111827;
+    background-color: #f3f4f6;
+}
+
+.job-table td {
+    color: #1f2937;
+    background-color: #ffffff;
+}
+
+.job-table tbody tr:hover td {
+    background-color: #f3f4f6;
+}
+/* ============================= */
+/* Background Job Monitor */
+/* ============================= */
+
+.job-monitor {
+    margin-top: 30px;
+    padding: 22px;
+    background: #ffffff;
+    border-radius: 12px;
+    color: #1f2937;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.job-monitor h2 {
+    margin-bottom: 18px;
+    color: #0f766e;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.job-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.job-table th {
+    background: #0f766e;
+    color: #ffffff;
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.job-table td {
+    padding: 12px 14px;
+    color: #1f2937;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.job-table tbody tr:hover td {
+    background: #f0fdfa;
+}
+
+.job-table tbody tr:last-child td {
+    border-bottom: none;
+}
+/* Fix Background Job Monitor heading */
+
+.admin-dashboard .job-monitor h2 {
+    color: #0f766e !important;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
