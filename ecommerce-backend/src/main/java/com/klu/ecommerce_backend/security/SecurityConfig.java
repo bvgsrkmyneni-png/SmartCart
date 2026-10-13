@@ -1,3 +1,4 @@
+
 package com.klu.ecommerce_backend.security;
 
 import java.util.List;
@@ -104,8 +105,12 @@ public class SecurityConfig {
         CorsConfiguration configuration =
                 new CorsConfiguration();
 
+        // Allow local development and deployed Vercel frontend
         configuration.setAllowedOrigins(
-                List.of("http://localhost:5173")
+                List.of(
+                    "http://localhost:5173",
+                    "https://smart-cart-psi-one.vercel.app"
+                )
         );
 
         configuration.setAllowedMethods(

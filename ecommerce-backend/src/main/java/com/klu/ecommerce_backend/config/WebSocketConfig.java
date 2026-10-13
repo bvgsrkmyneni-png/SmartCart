@@ -1,3 +1,4 @@
+
 package com.klu.ecommerce_backend.config;
 
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +18,8 @@ public class WebSocketConfig
 
         registry.addEndpoint("/ws-smartcart")
                 .setAllowedOriginPatterns(
-                        "http://localhost:5173"
+                        "http://localhost:5173",
+                        "https://smart-cart-psi-one.vercel.app"
                 );
     }
 
